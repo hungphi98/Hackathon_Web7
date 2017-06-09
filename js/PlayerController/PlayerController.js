@@ -24,8 +24,9 @@ class PlayerController{
       this.timeSinceLastJump += Gamefefe.game.time.physicsElapsed;
       this.timeSinceLastMove+=Gamefefe.game.time.physicsElapsed;
       if(Gamefefe.keyboard.isDown(Phaser.Keyboard.F)){
-          console.log(Gamefefe.properties.xPosition,Gamefefe.properties.yPosition);
+          console.log(this.sprite.x,this.sprite.y);
       }
+
       if(Gamefefe.keyboard.isDown(this.configs.jump)
           && this.timeSinceLastJump > 0.3
         ){
@@ -47,6 +48,12 @@ class PlayerController{
     else{
          this.sprite.body.velocity.x = 0;
     }
+    if (this.sprite.body.y>700){
+        Gamefefe.players.shift();
+        this.sprite.kill();
+        Gamefefe.players.push(new PlayerController(0,0,'player1Walk',Gamefefe.configs.PLAYER_CONTROL));
+    }
+
   }
 
 }

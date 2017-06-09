@@ -27,7 +27,8 @@ class FlyController extends EnemyController{
             Gamefefe.moveRight.fly=true;
             }
         }
-        
+
 }
+    
 
 }
