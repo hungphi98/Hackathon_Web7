@@ -3,6 +3,7 @@ var overviewState={
         Gamefefe.game.load.image('menu', 'Assets/testMenu3.jpg');
         Gamefefe.game.load.image('level1b','Assets/HUD/hud_1.png');
         Gamefefe.game.load.image('level2b','Assets/HUD/hud_2.png');
+		Gamefefe.game.load.image('level3b','Assets/HUD/hud_3.png');
 	},
 	create: function(){
    	  Gamefefe.overview=Gamefefe.game.add.sprite(0,0, 'menu');
@@ -23,6 +24,9 @@ var overviewState={
       Gamefefe.level2 = this.game.add.button(1000,450,'level2b',this.start2,this);
       Gamefefe.level2.fixedToCamera = true;
       Gamefefe.level2.anchor.setTo(0.5);
+	  Gamefefe.level3 = this.game.add.button(1100,450,'level3b',this.start3,this);
+      Gamefefe.level3.fixedToCamera = true;
+      Gamefefe.level3.anchor.setTo(0.5);
 	},
   start1: function(){
       console.log('ready to play');
@@ -30,6 +34,9 @@ var overviewState={
   },
   start2: function(){
       Gamefefe.game.state.start('level2');
+  },
+  start3: function(){
+      Gamefefe.game.state.start('level3');
   }
 
 }

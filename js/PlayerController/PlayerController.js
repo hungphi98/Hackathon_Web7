@@ -10,7 +10,7 @@ class PlayerController{
     Gamefefe.game.camera.follow(this.sprite);
     this.sprite.body.bounce.y = 0.2;
     this.sprite.body.gravity.y = 500;
-    this.sprite.body.collideWorldBounds = true;
+    //this.sprite.body.collideWorldBounds = true;
     this.sprite.anchor.x=0;this.sprite.anchor.y=1;
     this.timeSinceLastJump=0;
     this.timeSinceLastMove=0;
@@ -50,6 +50,10 @@ class PlayerController{
     }
     if (this.sprite.body.y>700){
         Gamefefe.players.shift();
+        Gamefefe.isDead=true;
+        for (var life of Gamefefe.lives){
+            life.update();
+        }
         this.sprite.kill();
         Gamefefe.players.push(new PlayerController(0,0,'player1Walk',Gamefefe.configs.PLAYER_CONTROL));
     }

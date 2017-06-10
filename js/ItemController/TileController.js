@@ -2,6 +2,10 @@ class TileController{
     constructor(x,y,spriteName,configs){
         this.sprite = Gamefefe.game.add.sprite(x,y,spriteName);
         Gamefefe.game.physics.arcade.enable(this.sprite);
+        this.sprite.body.checkCollision.up = true;
+        this.sprite.body.immovable = true;
+        this.sprite.body.allowGravity = true;
+
     }
     update(){
         Gamefefe.game.physics.arcade.collide(this.sprite, Gamefefe.groundLayer);

@@ -23,6 +23,7 @@ window.onload = function(){
   Gamefefe.game.state.add('overview', overviewState);
   Gamefefe.game.state.add('level1', level1State);
   Gamefefe.game.state.add('level2', level2State);
+  Gamefefe.game.state.add('level3', level3State);
   Gamefefe.game.state.start('boot');
 }
 
@@ -36,8 +37,12 @@ Gamefefe.items={
     traps: [],
     coins: [],
     doors:[],
-    weight: []
+    weight: [],
+
 };
+
+
+
 
 Gamefefe.properties={
     xPosition:0,

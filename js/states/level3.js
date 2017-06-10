@@ -1,6 +1,6 @@
-var level1State={
+var level3State={
 	preload: function(){
-	    Gamefefe.game.load.tilemap('gamemap', 'Assets/Maps/mapLevel1.json', null, Phaser.Tilemap.TILED_JSON);
+	    Gamefefe.game.load.tilemap('gamemap', 'Assets/Maps/mapLevel3.json', null, Phaser.Tilemap.TILED_JSON);
     	Gamefefe.game.load.image('tiles', 'Assets/Tiles/tiles_spritesheet.png');
     	Gamefefe.game.load.atlasJSONHash('player1Walk', 'Assets/Player/p1_walk/p1_walk.png', 'Assets/Player/p1_walk/p1_walk.json');
     	Gamefefe.game.load.spritesheet('fly', 'Assets/Enemies/flyFly0.png', 74, 33);
